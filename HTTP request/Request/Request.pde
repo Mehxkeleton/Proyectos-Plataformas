@@ -32,17 +32,19 @@ public void setup()
 }
 
 void draw(){
-  GetRequest get = new GetRequest("http://httprocessing.heroku.com"); //esto cambialo por el url que utilizes para el servidor
+  GetRequest get = new GetRequest("http://localhost:8080/sensors/fakesensor"); //esto cambialo por el url que utilizes para el servidor
   get.send();
-  entrada = matchAll(get.getContent(),"<Sensor_Id>(.*?)</Sensor_Id>");
+  entrada = matchAll(get.getContent(),"<Sensor_Value>(.*?)</Sensor_Value>");
   
   
-  /*for (int i =0; i<3; i++){
+  for (int i =0; i<3; i++){
     valores [i] = Float.parseFloat(entrada [i][1]);
-  }*/
+  }
   
   for (int i=0; i<3; i++){
-    //m[i].updateMeter((int)(valores[i] * 255));
-    m[i].updateMeter(200);
+    m[i].updateMeter((int)(valores[i]*10));
+    println(valores[i]*10);
+    //m[i].updateMeter(200);
   }
+  delay(1000);
 }
