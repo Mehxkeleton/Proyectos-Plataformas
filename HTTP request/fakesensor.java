@@ -31,11 +31,11 @@ public class fakesensor extends HttpServlet {
     throws ServletException, IOException {
 		String head ="<sensor_table>";
 		String tail = "</sensor_table>";
-		String fakeTemp = "<Sensor><TimeStamp>2010-09-0708:41:42.0</TimeStamp><Sensor_Id>1</Sensor_Id><Sensor_Name>Temp</Sensor_Name> <Sensor_Value>"+Math.Random()+"</Sensor_Value><Sensor_Flag>true</Sensor_Flag></Sensor>";		
-		String fakeLight = "<Sensor><TimeStamp>2010-09-0708:41:42.0</TimeStamp><Sensor_Id>2</Sensor_Id><Sensor_Name>Light</Sensor_Name> <Sensor_Value>"+Math.Random()+"</Sensor_Value><Sensor_Flag>true</Sensor_Flag></Sensor>";		
-		String fakeVibration = "<Sensor><TimeStamp>2010-09-0708:41:42.0</TimeStamp><Sensor_Id>3</Sensor_Id><Sensor_Name>Vibration</Sensor_Name> <Sensor_Value>"+Math.Random()+"</Sensor_Value><Sensor_Flag>false</Sensor_Flag></Sensor>";		
-		String fakeWeight = "<Sensor><TimeStamp>2010-09-0708:41:42.0</TimeStamp><Sensor_Id>4</Sensor_Id><Sensor_Name>Weight</Sensor_Name> <Sensor_Value>"+Math.Random()+"</Sensor_Value><Sensor_Flag>true</Sensor_Flag></Sensor>";		
-		String fakeProximity = "<Sensor><TimeStamp>2010-09-0708:41:42.0</TimeStamp><Sensor_Id>5</Sensor_Id><Sensor_Name>Proximity</Sensor_Name> <Sensor_Value>"+Math.Random()+"</Sensor_Value><Sensor_Flag>false</Sensor_Flag></Sensor>";
+		String fakeTemp = "<Sensor><TimeStamp>2010-09-0708:41:42.0</TimeStamp><Sensor_Id>1</Sensor_Id><Sensor_Name>Temp</Sensor_Name> <Sensor_Value>"+Math.random()+"</Sensor_Value><Sensor_Flag>true</Sensor_Flag></Sensor>";		
+		String fakeLight = "<Sensor><TimeStamp>2010-09-0708:41:42.0</TimeStamp><Sensor_Id>2</Sensor_Id><Sensor_Name>Light</Sensor_Name> <Sensor_Value>"+Math.random()+"</Sensor_Value><Sensor_Flag>true</Sensor_Flag></Sensor>";		
+		String fakeVibration = "<Sensor><TimeStamp>2010-09-0708:41:42.0</TimeStamp><Sensor_Id>3</Sensor_Id><Sensor_Name>Vibration</Sensor_Name> <Sensor_Value>"+Math.random()+"</Sensor_Value><Sensor_Flag>false</Sensor_Flag></Sensor>";		
+		String fakeWeight = "<Sensor><TimeStamp>2010-09-0708:41:42.0</TimeStamp><Sensor_Id>4</Sensor_Id><Sensor_Name>Weight</Sensor_Name> <Sensor_Value>"+Math.random()+"</Sensor_Value><Sensor_Flag>true</Sensor_Flag></Sensor>";		
+		String fakeProximity = "<Sensor><TimeStamp>2010-09-0708:41:42.0</TimeStamp><Sensor_Id>5</Sensor_Id><Sensor_Name>Proximity</Sensor_Name> <Sensor_Value>"+Math.random()+"</Sensor_Value><Sensor_Flag>false</Sensor_Flag></Sensor>";
         
 		String name = "param";
         String value = request.getParameter(name);		
@@ -62,20 +62,28 @@ try{
 			else{				
 				 response.setContentType("text/html;charset=UTF-8");      
        // Write the response message, in an HTML page
+	fakeLight = "<Sensor><TimeStamp>2010-09-0708:41:42.0</TimeStamp><Sensor_Id>2</Sensor_Id><Sensor_Name>Light</Sensor_Name> <Sensor_Value>"+Math.random()+"</Sensor_Value><Sensor_Flag>true</Sensor_Flag></Sensor>";		
+	fakeVibration = "<Sensor><TimeStamp>2010-09-0708:41:42.0</TimeStamp><Sensor_Id>3</Sensor_Id><Sensor_Name>Vibration</Sensor_Name> <Sensor_Value>"+Math.random()+"</Sensor_Value><Sensor_Flag>false</Sensor_Flag></Sensor>";		
+	fakeWeight = "<Sensor><TimeStamp>2010-09-0708:41:42.0</TimeStamp><Sensor_Id>4</Sensor_Id><Sensor_Name>Weight</Sensor_Name> <Sensor_Value>"+Math.random()+"</Sensor_Value><Sensor_Flag>true</Sensor_Flag></Sensor>";		
+	fakeProximity = "<Sensor><TimeStamp>2010-09-0708:41:42.0</TimeStamp><Sensor_Id>5</Sensor_Id><Sensor_Name>Proximity</Sensor_Name> <Sensor_Value>"+Math.random()+"</Sensor_Value><Sensor_Flag>false</Sensor_Flag></Sensor>";
+        
   
          pagina.println("<!DOCTYPE html>");
          pagina.println("<html><head>");
          pagina.println("<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>");
          pagina.println("<title>Hello, Sensores</title></head>");
          pagina.println("<body>");
-         pagina.println("<h1>Hello, sensor!</h1>");  // says Hello
+         pagina.println("<h1>Hello, sensores!</h1>");  // says Hello
          // Echo client's request information
          pagina.println("<p>Request URI: " + request.getRequestURI() + "</p>");
          pagina.println("<p>Protocol: " + request.getProtocol() + "</p>");
          pagina.println("<p>PathInfo: " + request.getPathInfo() + "</p>");
          pagina.println("<p>Remote Address: " + request.getRemoteAddr() + "</p>");
          // Generate a random number upon each request
-         pagina.println("<p>A Random Number: <strong>" + Math.random() + "</strong></p>");
+         pagina.println(fakeLight);
+	 pagina.println(fakeVibration);
+	 pagina.println(fakeWeight);
+	 pagina.println(fakeProximity);
          pagina.println("</body>");
          pagina.println("</html>");
       } 				
