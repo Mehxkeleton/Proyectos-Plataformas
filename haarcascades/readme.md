@@ -6,15 +6,15 @@ Para lograrlo primero es necesario pasar las imágenes que demuestran el sentimi
 para identificar patrones.
 dentro de la carpeta haarcascades encontramos: 
 
->>Una carpeta llamada "data" el cual contiene 2 carpetas, una llamada test y la otra train, ambas contienen 7 carpetas con 
+-Una carpeta llamada "data" el cual contiene 2 carpetas, una llamada test y la otra train, ambas contienen 7 carpetas con 
 imágenes de distintas expresiones faciales con filtro blanco y negro, ya que asi es mas fácil para el reconocimiento de facciones.
 La carpeta train se utiliza primero para reconocer las facciones, después la red utiliza las imágenes de train para comparar resultados
 y saber el error que tiene al aprender. 
 Nosotros dejamos que el programa pasara por 50 épocas para una mejor aprendizaje.
->>Archivo principal con el código llamado "camera.py"
->> 3 archivos pre-entrenados, los .xml los cuales contienen descripciones genéricas de objetos, en este caso se encargan de detectar
+-Archivo principal con el código llamado "camera.py"
+- 3 archivos pre-entrenados, los .xml los cuales contienen descripciones genéricas de objetos, en este caso se encargan de detectar
 la cara, y los ojos. El archivo .h5 es el producto del análisis de la red después de haber entrenado.
->>imágenes .jpg que utilizamos para probar los resultados del análisis de la red, actualmente ya no se encuentran dentro del codigo,
+-imágenes .jpg que utilizamos para probar los resultados del análisis de la red, actualmente ya no se encuentran dentro del codigo,
 ya que cambiamos el reconocimiento de fotos a cámara en tiempo real.
 
 -----Pre-requisitos-----
